@@ -537,12 +537,16 @@ def problem1d(t, sequence):
            FOR HELP if this problem's specification is not clear to you.
      """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     ###########################################################################
 
-    for k in range(len(sequence / 2)):
-
+    product = 1
+    for k in range(len(sequence) // 2):
+        placement = sequence[k + (len(sequence) // 2)]
+        if sum_of_digits(placement) > t:
+            product = product * placement
+    return product
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
